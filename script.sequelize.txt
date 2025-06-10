@@ -173,6 +173,19 @@ npx sequelize-cli db:migrate
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 ##### AULA 02 ########
 ## Comandos sequeilize-cli úteis ##
 
@@ -211,6 +224,9 @@ npx sequelize-cli migration:generate --name create-cliente
 ## 1 - Criar uma migrate e model para pedido (não inserir campo cliente_id)
 ## 2 - Alterar a tabela pedido com mais campos (cliente_id) (criar nova migrate)
 ## campos: id, created_at, updated_at
+
+
+
 
 ## Parte - 1
 npx sequelize-cli migration:generate --name create-pedidos
@@ -343,7 +359,7 @@ module.exports = Pedidos;
 
 
 ## gerar migration REL_Pedidos_produtos
-npx sequelize-cli migration:generate --name EL_pedidos_produtos
+npx sequelize-cli migration:generate --name REL_pedidos_produtos
 
 ## MIGRATION
 'use strict';

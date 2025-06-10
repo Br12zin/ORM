@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const database = require('../src/db/conn');
+const Pedidos = require('./pedidos')
 
 const clientes = database.define('clientes', {
     id: {
@@ -31,5 +32,11 @@ const clientes = database.define('clientes', {
   { underscored: true },
   { freezeTableName: true }
 )
+// has many - TEM VÁRIOS: neste caso um cliente pode ter vávios pedidos
+clientes.hasMany(Pedidos, { as: 'pedidos' })
+
+// belongs To - PERTENCE A: cada pedido pertence à SOMENTE um cliente
+Pedidos.belongsTo(clientes, { foreignKey: 'clienteId' })
+
 
 module.exports = clientes;
